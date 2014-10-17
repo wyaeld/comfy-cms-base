@@ -29,6 +29,9 @@ gem 'spring',        group: :development
 gem 'comfortable_mexican_sofa', '~> 1.12.2'
 gem 'comfy_blog', '~> 1.12.0'
 
+gem 'omniauth-oauth2'
+gem 'omniauth-google-oauth2'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
