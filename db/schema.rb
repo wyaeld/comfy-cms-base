@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141017230336) do
+ActiveRecord::Schema.define(version: 20141017230337) do
 
   create_table "comfy_blog_comments", force: true do |t|
     t.integer  "post_id",                      null: false
@@ -176,13 +176,27 @@ ActiveRecord::Schema.define(version: 20141017230336) do
   add_index "comfy_cms_snippets", ["site_id", "identifier"], name: "index_comfy_cms_snippets_on_site_id_and_identifier", unique: true
   add_index "comfy_cms_snippets", ["site_id", "position"], name: "index_comfy_cms_snippets_on_site_id_and_position"
 
-  create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
+  create_table "google_user_infos", force: true do |t|
+    t.integer  "user_id",        null: false
+    t.string   "google_user_id", null: false
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "image"
-    t.string   "urls"
+    t.string   "email"
+    t.string   "gender"
+    t.string   "name"
+    t.string   "link"
+    t.string   "profile_link"
+    t.string   "picture"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "google_user_infos", ["google_user_id"], name: "index_google_user_infos_on_google_user_id", unique: true
+  add_index "google_user_infos", ["user_id"], name: "index_google_user_infos_on_user_id", unique: true
+
+  create_table "users", force: true do |t|
+    t.string   "username"
+    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

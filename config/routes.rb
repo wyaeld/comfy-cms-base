@@ -1,4 +1,17 @@
 Rails.application.routes.draw do
+
+  # get '/glogin', to: 'auth/google_oauth2'
+
+  # post "/auth/google_oauth2", to: "sessions#create"
+
+  get "/auth/google_oauth2", as: 'login_google'
+  match "/auth/:provider/callback", to: "users/omniauth_callbacks#complete", via: [:get, :post]
+  match "/auth/failure", to: "users/omniauth_callbacks#failure", via: [:get, :post]
+
+  resources :sessions do
+    get 'new2', on: :collection
+  end
+
   comfy_route :blog_admin, :path => '/admin'
   comfy_route :blog, :path => '/blog'
 

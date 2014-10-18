@@ -1,6 +1,15 @@
 # encoding: utf-8
 
+module CmsDeviseAuth
+  def authenticate
+    unless current_user && current_user.admin?
+      redirect_to new_session_path
+    end
+  end
+end
+
 ComfortableMexicanSofa.configure do |config|
+  config.admin_auth = 'CmsDeviseAuth'
   # Title of the admin area
   #   config.cms_title = 'ComfortableMexicanSofa CMS Engine'
 

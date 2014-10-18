@@ -7,6 +7,11 @@ gem 'rails', '4.1.6'
 gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
+# gem 'bootstrap-sass'
+gem 'bootstrap-sass', '~> 3.1.0'
+# gem 'bootstrap-sass', github: 'twbs/bootstrap-sass', branch: 'next'
+
+gem 'autoprefixer-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -31,6 +36,16 @@ gem 'comfy_blog', '~> 1.12.0'
 
 gem 'omniauth-oauth2'
 gem 'omniauth-google-oauth2'
+
+
+
+  # jazz hands gems
+gem 'awesome_print'
+gem 'coolline'
+gem 'pry-rails'
+gem 'hirb'
+gem 'pry-stack_explorer'
+gem 'pry-byebug'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
